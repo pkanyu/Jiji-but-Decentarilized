@@ -59,24 +59,48 @@ function CreateAuction() {
 
     return (
         <>
-            <h1>Start New Gallary</h1>
+            <h1>Start New Gallery</h1>
             <div className="auction-form" style={{ opacity: saving ? 0.5 : 1 }}>
                 <div className="auction-form-row">
                     <div className="auction-form-label">Title: </div>
                     <div className="auction-form-input">
-                        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                        <div className="mb-3">
+                            <input
+                                type="text"
+                                className="form-control"
+                                id=""
+                                value={title}
+                                aria-describedby="helpId"
+                                placeholder="Title"
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="auction-form-row">
                     <div className="auction-form-label">Description: </div>
                     <div className="auction-form-input">
-                        <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+                        <div className="mb-3">
+                            <textarea className="form-control" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                        </div>
                     </div>
                 </div>
                 <div className="auction-form-row">
                     <div className="auction-form-label">Picture (PNG only): </div>
                     <div className="auction-form-input">
-                        <input type="file" accept='.png' onChange={(e) => changeFile(e.target.files?.[0])} />
+                        <div className="mb-3">
+                            <label className="form-label">Choose file</label>
+                            <input
+                                type="file"
+                                className="form-control"
+                                accept='.png'
+                                name=""
+                                id=""
+                                placeholder="upload a png file"
+                                onChange={(e) => changeFile(e.target.files?.[0])}
+                                aria-describedby="fileHelpId"
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="auction-form-row">
@@ -87,7 +111,7 @@ function CreateAuction() {
                     </div>
                 </div>
                 <div className="auction-form-footer">
-                    <button className='auction-form-button' onClick={newAuction} disabled={saving}>
+                    <button className='btn btn-outline-success btn-md' onClick={newAuction} disabled={saving}>
                         Create new Item for Auction
                     </button>
                 </div>

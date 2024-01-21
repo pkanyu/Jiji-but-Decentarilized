@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuctionDetail from './AuctionDetail';
 
 function App() {
+
   return (
     <BrowserRouter>
       <div>
