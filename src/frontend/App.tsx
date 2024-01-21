@@ -12,7 +12,7 @@ function App() {
       <div>
         <img src={motoko} className="logo" alt="Motoko logo" />
       </div>
-      <h1>Bid for Second-Hand Items Platform</h1>
+      <h1>Buy And Sell HIgh-End Art</h1>
       <Navigation />
       <div className="content">
         <Routes>

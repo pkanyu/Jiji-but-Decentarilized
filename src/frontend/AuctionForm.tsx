@@ -59,10 +59,10 @@ function CreateAuction() {
 
     return (
         <>
-            <h1>Start New Gallary</h1>
+            <h1>Start New Gallary Item</h1>
             <div className="auction-form" style={{ opacity: saving ? 0.5 : 1 }}>
                 <div className="auction-form-row">
-                    <div className="auction-form-label">Title: </div>
+                    <div className="auction-form-label">Item Title: </div>
                     <div className="auction-form-input">
                         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                     </div>
