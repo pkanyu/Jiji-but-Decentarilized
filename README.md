@@ -19,7 +19,6 @@ npm start
 
 [![Watch the Video](https://img.shields.io/badge/Watch%20on%20YouTube-Click%20to%20Watch-red)](https://youtu.be/7jccDsxeaMQ)
 
-> Someone forgot to paste the link in the submission form.
 
 Local frontend: http://localhost:3000/
 
