@@ -34,15 +34,34 @@
     font-family: inherit;
 }
 
+
 .auction-form-button {
-    background-color: #7070ed;
-    padding: 20px;
-    display: inline-block;
-    position: relative;
-    font-size: x-large;
-    border: 1px solid black;
-    color: white;
     border-radius: 8px;
+    border: none; // removing the border for a cleaner look
+    padding: 0.8em 1.4em; // slightly larger padding for a better visual
+    font-size: 1em;
     font-weight: 500;
-    font-family: inherit;
+    font-family: 'Montserrat', sans-serif; // assuming you've imported Montserrat
+    color: #ffffff; // white text color for better contrast
+    background-image: linear-gradient(135deg, #646cff 0%, #535bf2 100%); // gradient background
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // subtle shadow for depth
+    cursor: pointer;
+    transition: all 0.3s ease; // smooth transition for all changes
+
+    &:hover {
+        background-image: linear-gradient(135deg, #535bf2 0%, #646cff 100%); // change the direction of gradient on hover
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // more pronounced shadow on hover
+        transform: translateY(-2px); // slight lift effect
+    }
+
+    &:active {
+        transform: translateY(1px); // subtle press down effect
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); // less shadow on press
+    }
+
+    &:focus,
+    &:focus-visible {
+        outline: 4px auto -webkit-focus-ring-color;
+        outline-offset: 2px; // to avoid the outline from clashing with the button border
+    }
 }

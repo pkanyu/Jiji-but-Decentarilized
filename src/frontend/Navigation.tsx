@@ -63,7 +63,7 @@ function Navigation() {
         <>
             <div className="menu">
                 <div className="menu-item">
-                    <Link to="/">Listed Items for Sale</Link>
+                    <Link to="/">Listed Art Items for Sale</Link>
                 </div>
                 <div className="menu-item">
                     <Link to="/newAuction">New Auction Gallary</Link>
@@ -79,7 +79,7 @@ function Navigation() {
                 }
             </div>
             {!needLogin &&
-                <div className="principal">
+                <div className="principal text">
                     Logged in as: {principal?.toString()}
                 </div>
             }
