@@ -15,10 +15,11 @@ dfx start --clean --background
 npm run setup
 npm start
 ```
-## Video Overview
+# Video Demo
 
 [![Watch the Video](https://img.shields.io/badge/Watch%20on%20YouTube-Click%20to%20Watch-red)](https://youtu.be/7jccDsxeaMQ)
 
+> Someone forgot to paste the link in the submission form.
 
 Local frontend: http://localhost:3000/
 
@@ -33,4 +34,4 @@ Particular checks needed for a bid:
 * The auction must not be ended.
 * The price needs to be higher than the last bid (or it needs to be the first bid).
 * The user needs to be authenticated, i.e. it is not anonymous (using `Principal.isAnonymous()`).
-# Jiji-but-Decentarilized
+# Like Jiji-but-Decentarilized for Art.
