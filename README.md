@@ -15,6 +15,10 @@ dfx start --clean --background
 npm run setup
 npm start
 ```
+## Video Overview
+
+[![Watch the Video](https://img.shields.io/badge/Watch%20on%20YouTube-Click%20to%20Watch-red)](https://youtu.be/bw_3ms-9svM)
+
 
 Local frontend: http://localhost:3000/
 
