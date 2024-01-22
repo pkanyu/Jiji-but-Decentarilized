@@ -12,6 +12,8 @@
     "format": "prettier --write \"src/**/*.{json,js,jsx,ts,tsx,css,scss}\" \"src/backend/**/*.mo\""
   },
   "dependencies": {
+    "@types/bootstrap": "^5.2.10",
+    "bootstrap": "^5.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0"
@@ -19,8 +21,8 @@
   "devDependencies": {
     "@dfinity/agent": "^0.15.6",
     "@dfinity/auth-client": "^0.15.6",
-    "@dfinity/identity": "^0.15.6",
     "@dfinity/candid": "^0.15.6",
+    "@dfinity/identity": "^0.15.6",
     "@dfinity/principal": "^0.15.6",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
