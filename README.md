@@ -1,17 +1,14 @@
-# Motoko Auction Platform
+# Motoko HIgh-End Art Platform
 
-Application case for the Motoko workshop at KTH summer school (https://cysep.conf.kth.se/).
 
 A simple auction platform that allows to:
-* Open and view auctions
-* Bid within defined deadline
-* Authenticate by Internet Identity
+* Open and view auctions for Hidh -End Art where Both Buyers and Sellers can bid for and sell Art.
+* Bid within defined deadline period set by the originator.
+* Authenticate by Internet Identity as secure form of authentication.
 
-## Setup
 
-[Installation instructions](Installation.md)
 
-Running the application:
+## Running the application:
 
 ```
 dfx start --clean --background
@@ -20,12 +17,6 @@ npm start
 ```
 
 Local frontend: http://localhost:3000/
-
-## Workshop Goals
-
-You can focus on the backend development with Motoko: 
-
-`src/backend/AuctionServer.mo`
 
 Functionality to add:
 * Storing and retrieving the auction data in the actor. Prefer `stable` variable(s).
@@ -38,16 +29,4 @@ Particular checks needed for a bid:
 * The auction must not be ended.
 * The price needs to be higher than the last bid (or it needs to be the first bid).
 * The user needs to be authenticated, i.e. it is not anonymous (using `Principal.isAnonymous()`).
-
-[Code Structure](Structure.md)
-
-## Documentation
-
-* [Motoko Tutorial Slides](Motoko_Tutorial.pdf)
-* [Motoko Language](https://internetcomputer.org/docs/current/motoko/main/motoko)
-* [Motoko Base Library](https://internetcomputer.org/docs/current/motoko/main/base)
-
-# Workshop Solution
-
-* An example solution with a complete Motoko backend implementation is available in the [Git branch `solution`](https://github.com/luc-blaeser/auction/tree/solution).
 # Jiji-but-Decentarilized
