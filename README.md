@@ -17,7 +17,7 @@ npm start
 ```
 ## Video Overview
 
-[![Watch the Video](https://img.shields.io/badge/Watch%20on%20YouTube-Click%20to%20Watch-red)](https://youtu.be/bw_3ms-9svM)
+[![Watch the Video](https://img.shields.io/badge/Watch%20on%20YouTube-Click%20to%20Watch-red)](https://youtu.be/7jccDsxeaMQ)
 
 
 Local frontend: http://localhost:3000/
