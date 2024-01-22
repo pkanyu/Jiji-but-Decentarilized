@@ -36,10 +36,10 @@ function AuctionList() {
     return (
         <>
             {list == null &&
-                <div className="section">Loading</div>
+                <div className="section text-warning">Loading</div>
             }
             {list?.length == 0 &&
-                <div className="section">No Items listed so far</div>
+                <div className="section text-warning fw-bold">No Items listed so far</div>
             }
             {list != null && list.length > 0 &&
                 <ul className="gallery">

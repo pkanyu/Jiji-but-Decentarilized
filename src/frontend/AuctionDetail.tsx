@@ -6,27 +6,42 @@ import { useParams } from "react-router-dom";
 import { getImageSource } from './common';
 import { AuthClient } from '@dfinity/auth-client';
 
+/**
+ * Renders the auction detail page.
+ */
 function AuctionDetail() {
     const { id } = useParams();
     const auctionId = BigInt(id as string);
 
+    /**
+     * State variables for the auction detail page.
+     */
     const [auctionDetails, setAuctionDetails] = useState<AuctionDetails | undefined>();
     const [newPrice, setNewPrice] = useState(0);
     const [lastError, setLastError] = useState<string | undefined>(undefined);
     const [saving, setSaving] = useState(false);
     const [authenticated, setAuthenticated] = useState(false);
 
+    /**
+     * Fetches the auction details from the backend and sets the state.
+     */
     const fetchFromBackend = async () => {
         setAuctionDetails(await backend.getAuctionDetails(auctionId));
         const authClient = await AuthClient.create();
         setAuthenticated(await authClient.isAuthenticated());
     };
 
+    /**
+     * Sets up an interval to fetch the auction details every second.
+     */
     useEffect(() => {
         fetchFromBackend();
         setInterval(fetchFromBackend, 1000);
     }, [auctionId]);
 
+    /**
+     * Makes a new bid on the auction.
+     */
     const makeNewOffer = async () => {
         try {
             setSaving(true);
@@ -49,6 +64,9 @@ function AuctionDetail() {
         }
     };
 
+    /**
+     * Renders the bid history table.
+     */
     const historyElements = auctionDetails?.bidHistory.map(bid =>
         <tr key={+bid.price.toString()}>
             <td>
@@ -63,6 +81,9 @@ function AuctionDetail() {
         </tr>
     );
 
+    /**
+     * Returns the last bid in the auction history.
+     */
     const getLastBid = () => {
         if (auctionDetails == null) {
             return null;
@@ -74,12 +95,18 @@ function AuctionDetail() {
         return history[history.length - 1];
     }
 
+    /**
+     * Sets the new bid price to the next highest value if the price is zero.
+     */
     if (newPrice == 0) {
         const currentBid = getLastBid();
         const proposedPrice = currentBid == null ? 1 : +currentBid.price.toString() + 1;
         setNewPrice(proposedPrice);
     }
 
+    /**
+     * Handles the input for the new bid price.
+     */
     const handleNewPriceInput = (input: string) => {
         try {
             const value = parseInt(input);
@@ -91,6 +118,9 @@ function AuctionDetail() {
         }
     }
 
+    /**
+     * Renders the auction item details.
+     */
     const displayItem = (item: Item) => {
         return (
             <>
@@ -105,6 +135,9 @@ function AuctionDetail() {
         );
     }
 
+    /**
+     * Renders the bid history section.
+     */
     const showHistory = () => {
         return (<div className="section">
             <h2>History</h2>
@@ -124,6 +157,9 @@ function AuctionDetail() {
         );
     }
 
+    /**
+     * Renders the bid form if the user is authenticated.
+     */
     const showBidForm = () => {
         if (!authenticated) {
             return (<h2 className="error-message">Need to sign in to buy and bid</h2>);
@@ -145,6 +181,9 @@ function AuctionDetail() {
         );
     }
 
+    /**
+     * Renders the auction details section.
+     */
     const showAuction = () => {
         if (auctionDetails == null) {
             throw Error("undefined auction");
@@ -170,12 +209,15 @@ function AuctionDetail() {
         );
     }
 
+    /**
+     * Returns true if the auction is closed.
+     */
     const isClosed = auctionDetails != null && +auctionDetails.remainingTime.toString() == 0;
 
     return (
         <>
             {auctionDetails == null ?
-                <div className="section">Loading</div>
+                <div className="section text-warning">Loading</div>
                 :
                 showAuction()
             }

@@ -59,7 +59,7 @@ function CreateAuction() {
 
     return (
         <>
-            <h1>Start New Gallery</h1>
+            <h1 className="text-warning fw-bold mt-4 mb-3">Start New Gallery</h1>
             <div className="auction-form" style={{ opacity: saving ? 0.5 : 1 }}>
                 <div className="auction-form-row">
                     <div className="auction-form-label">Title: </div>

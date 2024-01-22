@@ -6,14 +6,16 @@ import Navigation from './Navigation';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuctionDetail from './AuctionDetail';
 
+/**
+ * Main application component
+ */
 function App() {
-
   return (
     <BrowserRouter>
       <div>
         <img src={motoko} className="logo" alt="Motoko logo" />
       </div>
-      <h1>Bid for Second-Hand Items Platform</h1>
+      <h1 className="text-warning fw-bold display-5 mb-4">Bid for Second-Hand Items Platform</h1>
       <Navigation />
       <div className="content">
         <Routes>
