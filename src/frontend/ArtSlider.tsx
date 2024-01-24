@@ -64,8 +64,8 @@ const ArtSlider: React.FC = () => {
         {/* Add more items as needed */}
       </ul>
       <nav className='nav'>
-        <button className='btn prev' onClick={() => handleNavigation('prev')}>{"<"}</button>
-        <button className='btn next' onClick={() => handleNavigation('next')}>{">"}</button>
+        <button className='btn prev' onClick={() => handleNavigation('prev')}>{"<-"}</button>
+        <button className='btn next' onClick={() => handleNavigation('next')}>{"->"}</button>
       </nav>
     </main>
   );
